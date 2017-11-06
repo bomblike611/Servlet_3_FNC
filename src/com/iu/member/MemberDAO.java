@@ -10,11 +10,12 @@ import com.iu.db.DBconnector;
 public class MemberDAO {
 	
 	
-	public int getTotalCount() throws Exception{
+	public int getTotalCount(String kind,String search) throws Exception{
 		Connection con=DBconnector.getConnect();
 		
-		String sql="select nvl(count(id),0) from member";
+		String sql="select nvl(count(id),0) from member where "+kind+" like ?";
 		PreparedStatement st=con.prepareStatement(sql);
+		st.setString(1, "%"+search+"%");
 		ResultSet rs=st.executeQuery();
 		
 		rs.next();
