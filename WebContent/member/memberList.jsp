@@ -118,6 +118,13 @@
     <li><a href="./memberList.jsp?curPage=<%=lastNum+1%>&kind=<%=kind%>&search=<%=search%>">[다음]</a></li>
     <%} %>
   </ul>
+   <form action="memberList.jsp">
+  <select>
+  <option>이름</option>
+  <option>아이디</option>
+  <option>이메일</option>
+  </select>
+  </form>
 </div>
 </article>
 </section>

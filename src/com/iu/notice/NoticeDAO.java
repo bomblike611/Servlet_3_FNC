@@ -14,11 +14,12 @@ public class NoticeDAO {
 	
 	//getTotalCount
 	
-	public int getTotalCount() throws Exception{
+	public int getTotalCount(String kind,String search) throws Exception{
 		Connection con=DBconnector.getConnect();
 		
-		String sql="select nvl(count(num),0) C from notice";
+		String sql="select nvl(count(num),0) C from notice where "+kind+" like ?";
 		PreparedStatement st=con.prepareStatement(sql);
+		st.setString(1, "%"+search+"%");
 		ResultSet rs=st.executeQuery();
 		
 		rs.next();
