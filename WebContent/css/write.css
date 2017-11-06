@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+#main{
+	background-color: #FAF6DC;
+}
+
+
+#write{
+	width: 70%;
+	margin: 0 auto;
+}
+
+h1{
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+table{
+	border-spacing: 0px;
+	border-collapse: collapse;
+	margin: 0 auto;
+	background-color: white;
+	width: 70%;
+	height: 70%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+input{
+	width: 800px;
+}
+
+textarea{
+	width: 800px;
+}
+
+#btn{
+	width: 50px;
+	margin-left: 800px;
+}
+#contents{
+	height: 500px;
+}
+

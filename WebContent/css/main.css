@@ -1,0 +1,169 @@
+@charset "UTF-8";
+/***************헤에에ㅔㅔ에에에에에ㅔ에더시시시시시시시자작ㄱㄱㄱㄱㄱ***************/
+header {
+	width: 100%;
+	height: 67px;
+	background-image: url("../images/common/header_bg.png");
+	background-repeat: repeat-x;
+	position: fixed;
+	top: 0px;
+	z-index: 990;
+}
+
+#hdtop {
+	width: 920px;
+	/* background-color: gray; */
+	height: 67px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#logo{
+	margin-top:13px;
+	float: left;
+	
+}
+nav{
+	margin-left: 150px;
+	float: left;
+}
+
+nav li{
+	float: left;
+	list-style-type: none;
+	margin-right: 20px;
+	height: 67px;
+	line-height: 67px;
+	font-size: 0.9em;
+}
+
+nav a{
+	color: white;
+	text-decoration: none;
+}
+
+/* 마우스를 갖다댔을때 색깔이 바뀌는 거 */
+nav a:hover{
+	color: red;
+}
+
+.hdSubMenu {
+	float: right;
+}
+
+.hdSubMenu li{
+	list-style-type: none;
+	float: left;
+	margin-right: 10px;		
+	height: 67px;
+	line-height: 67px;
+	font-size: 0.6em;
+
+}
+.hdSubMenu a{
+	color: gray;
+	text-decoration: none;
+}
+.hdSubMenu a:hover{
+	color: white;
+}
+.hdSubMenu li:last-child {
+	margin-right: 0px;
+}
+/*************헤ㅔ에에에에에에더ㅓ 끄틑ㅌㅌ트ㅡ틑ㅌ*******************/
+
+
+/****************메인시작***************************/
+#main {
+	width: 100%;
+	height: 942px;
+	padding-top: 51px;
+	margin-top: 67px;
+}
+#MainContents{
+	width: 920px;
+	height: 892px;
+
+	margin: 0 auto;
+}
+#MainBoard{
+	width: 920px;
+	height: 306px;
+
+	margin-top: 16px;
+}
+
+.MainPost{
+	width: 298px;
+	height: 306px;
+	background-color: white;
+	float: left;
+}
+.MainPost:first-child{
+	margin-right: 13px;
+}
+.MainPost:last-child {
+	float: right;
+}
+
+.MainPost > div:first-child{
+	width: 298px;
+	height: 194px;
+	margin-bottom: 16px;
+}
+.MainPost > div:last-child{
+	width: 298px;
+	height: 96px;
+}
+
+/*************************메인 끝*******************/
+/*************************************푸터시작 ***/
+footer{
+	width: 100%;
+	height: 62px;
+	padding: 26px 0 44px 0;
+	background-image: url("../images/common/header_bg.png");
+}
+
+#footWrap{
+	width: 920px;
+	height: 58px;
+	margin: 0 auto;
+}
+
+#ft_logo{
+	float: left;
+}
+#ft_menu{
+	float: left;
+	margin-left: 25px;
+}
+#ft_menu li{
+	list-style-type: none;
+	float: left;
+	font-size: 0.7em;
+	margin-right: 10px;
+	color: #a9a9a9;
+}
+#ft_address{
+	clear:both;
+	color:#a9a9a9;
+	font-size: 0.7em;
+}
+#copyright{
+	font-size: 0.5em;
+	color: #a9a9a9;
+}
+#ft_site{
+	float: right;
+}
+
+#ft_site>select{
+	background-color: #646464;
+	width: 223px;
+	height: 23px;
+	color: #a9a9a9;
+}
+
+
+/*****************************************푸터끝*/

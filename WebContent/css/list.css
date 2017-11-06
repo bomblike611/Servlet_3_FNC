@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+#main{
+	background-color: #FAF6DC;
+}
+
+#list{
+	width: 60%;
+	margin: 0 auto;
+}
+
+h1{
+	text-align: center;
+}
+
+table{
+	border-collapse: collapse;
+	border-spacing: 0px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 12px;
+	width: 900px;
+}
+
+#write{
+	float: right;
+}
+
+#first{
+	background-color: black;
+	color: white;
+	border-bottom: 0px solid;
+}
+td{
+	border-bottom: 6px #FAF6DC solid;
+	width: 95px;
+	height: 50px;
+}
+
+tr{
+	background-color: white;
+}
+.contents{
+	width: 550px;
+}
