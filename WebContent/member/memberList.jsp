@@ -77,6 +77,12 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+article{
+width: 1200px;
+margin: 0 auto;
+}
+</style>
 </head>
 <body>
 
@@ -119,11 +125,13 @@
     <%} %>
   </ul>
    <form action="memberList.jsp">
-  <select>
-  <option>이름</option>
-  <option>아이디</option>
-  <option>이메일</option>
+  <select name="kind">
+  <option value="name">이름</option>
+  <option value="id">아이디</option>
+  <option value="email">이메일</option>
   </select>
+  <input type="text" name="search">
+  <input type="submit" class="btn btn-info" value="Search">
   </form>
 </div>
 </article>
