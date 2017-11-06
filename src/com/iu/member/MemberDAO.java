@@ -44,7 +44,7 @@ public class MemberDAO {
 		return result;
 	}
 	
-	
+	//selectlist
 	public ArrayList<MemberDTO> selectList(int startRow, int lastRow,String kind, String search) throws Exception{
 		Connection con=DBconnector.getConnect();
 		
@@ -72,6 +72,6 @@ public class MemberDAO {
 		return ar;
 		
 	}
-	
+	//=================================================================================
 	
 }

@@ -66,6 +66,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<link href="../css/header.css" rel="stylesheet">
+<link href="../css/footer.css" rel="stylesheet">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -76,6 +79,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<%@ include file="../temp/header.jsp" %>
 
 <section id="main">
 <article>
@@ -116,5 +121,6 @@
 </div>
 </article>
 </section>
+<%@ include file="../temp/footer.jsp" %>
 </body>
 </html>
