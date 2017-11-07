@@ -19,6 +19,17 @@ String s="수정실패";
 if(result>0){
 	s="수정완료";
 }
+
+
+request.setAttribute("message", s);
+
+//1 Foward
+//RequestDispatcher view = request.getRequestDispatcher("../common/result.jsp");
+//view.forward(request, response);
+
+//2. redirect
+response.sendRedirect("../common/result.jsp");
+
 %>
 <!DOCTYPE html>
 <html>
