@@ -55,7 +55,7 @@
 				<div class="col-sm-10">
 					<input type="text" class="form-control" id="id" name="id"
 						placeholder="Enter ID">
-					<input type="button" id="btn" class="btn btn-default" value="중복확인">	
+					<input type="button" id="btn" class="btn btn-danger" value="중복확인">	
 				</div>
 			</div>
 			<div class="form-group">
