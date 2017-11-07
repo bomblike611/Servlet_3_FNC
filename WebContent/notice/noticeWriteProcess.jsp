@@ -19,6 +19,17 @@
     if(result>0){
     	s="글쓰기 성공";
     }
+    
+    request.setAttribute("message", s);
+    
+     //1.forward
+  /*   RequestDispatcher view=request.getRequestDispatcher("../common/result.jsp");
+    view.forward(request, response); */
+    
+    //2.redirect
+    response.sendRedirect("../common/result.jsp");
+    
+    
     %>
 <!DOCTYPE html>
 <html>

@@ -118,13 +118,14 @@ margin: 0 auto;
   <li><a href="./memberList.jsp?curPage=<%=startNum-1%>&kind=<%=kind%>&search=<%=search%>">[이전]</a></li>
   <%} %>
   <%for(int i=startNum;i<=lastNum;i++){%>
-    <li><a href="./memberList.jsp?curPage=<%=i%>&kind=<%=kind%>&search=<%=search%>"><%=i %></a></li>
+    <li><input type="button" class="btn page" value="<%=i%>"></li>
     <%} %>
      <%if(curBlock<totalBlock){ %>
     <li><a href="./memberList.jsp?curPage=<%=lastNum+1%>&kind=<%=kind%>&search=<%=search%>">[다음]</a></li>
     <%} %>
   </ul>
    <form action="memberList.jsp">
+   <input type="hidden" name="curPage">
   <select name="kind">
   <option value="name">이름</option>
   <option value="id">아이디</option>
