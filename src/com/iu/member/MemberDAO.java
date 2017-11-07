@@ -8,7 +8,21 @@ import java.util.ArrayList;
 import com.iu.db.DBconnector;
 
 public class MemberDAO {
-	
+	public boolean idCheck(String id) throws Exception{
+		boolean check=true;
+		
+		Connection con=DBconnector.getConnect();
+		String sql="select * from member where id=?";
+		PreparedStatement st=con.prepareStatement(sql);
+		st.setString(1, id);
+		
+		ResultSet rs=st.executeQuery();
+		if(rs.next()) {
+			check=false;
+		}
+		DBconnector.disConnect(rs, st, con);
+		return check;
+	}
 	
 	public int getTotalCount(String kind,String search) throws Exception{
 		Connection con=DBconnector.getConnect();
