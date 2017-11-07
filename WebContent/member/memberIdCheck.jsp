@@ -20,6 +20,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var btn=document.getElementById("btn");
+	btn.addEventListener("click", function() {
+		window.opener.document.frm.id.value="<%=id%>";
+		window.close();
+	});
+}
+
+</script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,13 +44,13 @@
 </head>
 <body>
 	<h1>ID Check</h1>
-	<form action="memberIdCheck.jsp">
+	<form action="memberIdCheck.jsp" name="frm">
 	<p>ID : <input type="text" name="id">
 	<button class="btn btn-danger">중복체크</button></p>
 	</form>
 	<h3><%=s %></h3>
 	<%if(check){%>
-	<button class="btn btn-default">확인</button>
+	<button class="btn btn-default" id="btn">확인</button>
 	<%}%>
 </body>
 </html>
