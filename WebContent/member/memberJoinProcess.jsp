@@ -31,9 +31,6 @@
     
     request.setAttribute("message", s);
     request.setAttribute("path",path);
-    
-    RequestDispatcher view=request.getRequestDispatcher("../common/result.jsp");
-    view.forward(request, response);
     %>
 <!DOCTYPE html>
 <html>
