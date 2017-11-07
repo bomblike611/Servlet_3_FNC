@@ -9,6 +9,7 @@ import com.iu.db.DBconnector;
 
 public class MemberDAO {
 	
+	//idcheck
 	
 	public int getTotalCount(String kind,String search) throws Exception{
 		Connection con=DBconnector.getConnect();
