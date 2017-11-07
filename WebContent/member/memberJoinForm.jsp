@@ -96,47 +96,47 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="pw">PW:</label>
 				<div class="col-sm-10">
-					<input type="password" class="form-control" id="pw" name="pw"
-						placeholder="Enter Pw" class="n">
+					<input type="password" class="form-control n" id="pw" name="pw"
+						placeholder="Enter Pw" >
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="pw">PWCheck:</label>
 				<div class="col-sm-10">
-					<input type="password" class="form-control" id="pw2"
-						placeholder="Enter Pw" class="n"><span id="pw2check"></span>
+					<input type="password" class="form-control n" id="pw2"
+						placeholder="Enter Pw"><span id="pw2check"></span>
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="Name">Name:</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="name" name="name"
-						placeholder="Enter Name" class="n">
+					<input type="text" class="form-control n" id="name" name="name"
+						placeholder="Enter Name">
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="Email">Email:</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="email" name="email"
-						placeholder="Enter Email" class="n">
+					<input type="text" class="form-control n" id="email" name="email"
+						placeholder="Enter Email" >
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="Phone">Phone:</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="phone" name="phone"
-						placeholder="Enter Phone" class="n">
+					<input type="text" class="form-control n" id="phone" name="phone"
+						placeholder="Enter Phone">
 				</div>
 			</div>
 			
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="Age">Age:</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="age" name="age"
-						placeholder="Enter Age" class="n">
+					<input type="text" class="form-control n" id="age" name="age"
+						placeholder="Enter Age">
 				</div>
 			</div>
 			
