@@ -48,7 +48,7 @@
 	<%@ include file="../temp/header.jsp" %>
 	<section id="main">
 	<article>
-		<h1>Member Join Form</h1><br>
+		<h1>Member Join Form3</h1><br>
 		<form name="frm" class="form-horizontal" action="memberJoinProcess.jsp" method="post">
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="id">ID:</label>
