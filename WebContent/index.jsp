@@ -18,12 +18,6 @@
 	<%@ include file="./temp/header.jsp" %>
 	<!-- Header 끝 -->
 	<!-- 메인 시작 -->
-	<%MemberDTO memberDTO=(MemberDTO)request.getAttribute("member"); 
-	if(memberDTO !=null){%>
-		<h1>로그인 성공</h1>
-	<%}else{%>
-	<h1>로그인 이전</h1>
-	<%}%>
 	<section id="main">
 		<div id="MainContents">
 			<article id="mainImage">

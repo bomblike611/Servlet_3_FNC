@@ -4,6 +4,15 @@
     <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
+    
+    Cookie [] ar=request.getCookies();
+    String cId="";
+    for(int i=0;i<ar.length;i++){
+    	if(ar[i].getName().equals("id")){
+    		cId=ar[i].getValue();
+    		break;
+    	}
+    }
     %>
     
 <!DOCTYPE html>
@@ -40,7 +49,7 @@ window.onload=function(){
 </script>
 </head>
 <body>
-<section id="mian">
+<section id="main">
 <%@ include file="../temp/header.jsp" %>
 <h1>Login</h1>
 <form name="frm" class="form-horizontal"
@@ -50,7 +59,14 @@ window.onload=function(){
 					<label class="control-label col-sm-2" for="id">ID:</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="id" name="id"
-							placeholder="Enter ID">
+							placeholder="Enter ID" value="<%=cId%>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="Job">ID저장하기:</label>
+					<div class="col-sm-10">
+						<input type="checkbox" value="save"
+							class="checkbox-inline" name="save">
 					</div>
 				</div>
 				<div class="form-group">
