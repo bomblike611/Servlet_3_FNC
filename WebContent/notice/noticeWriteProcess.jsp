@@ -19,8 +19,10 @@
     if(result>0){
     	s="글쓰기 성공";
     }
+    String path="../index.jsp";
     
     request.setAttribute("message", s);
+    request.setAttribute("path", path);
     
      //1.forward
   /*   RequestDispatcher view=request.getRequestDispatcher("../common/result.jsp");

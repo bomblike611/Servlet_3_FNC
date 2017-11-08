@@ -24,10 +24,10 @@
 	
 	
 	NoticeDAO noticeDAO=new NoticeDAO();
-	ArrayList<NoticeDTO> ar=noticeDAO.selectList(startRow,lastRow);
+	ArrayList<NoticeDTO> ar=noticeDAO.selectList(startRow,lastRow,"","");
 	//////////////////////////////////////////////////////////////////
 	//pageing 처리
-	int totalCount=noticeDAO.getTotalCount();
+	int totalCount=noticeDAO.getTotalCount("","");
 	int totalPage=0;
 	if(totalCount%perPage==0){
 		totalPage=totalCount/perPage;

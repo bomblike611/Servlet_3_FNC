@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 import com.iu.db.DBconnector;
 
+import sun.security.pkcs11.Secmod.DbMode;
+
 public class MemberDAO {
 	public boolean idCheck(String id) throws Exception{
 		boolean check=true;
@@ -86,6 +88,33 @@ public class MemberDAO {
 		
 		return ar;
 		
+	}
+	
+	public MemberDTO selectOne(MemberDTO memberDTO) throws Exception{
+		Connection con=DBconnector.getConnect();
+		
+		MemberDTO mDTO=null;
+		String sql="select * from member where id=? and pw=? and job=?";
+		PreparedStatement st=con.prepareStatement(sql);
+		st.setString(1, memberDTO.getId());
+		st.setString(2, memberDTO.getPw());
+		st.setString(3, memberDTO.getJob());
+		ResultSet rs=st.executeQuery();
+		
+		
+		if(rs.next()) {
+			mDTO=new MemberDTO();
+			mDTO.setId(rs.getString("id"));
+			mDTO.setPw(rs.getString("pw"));
+			mDTO.setName(rs.getString("name"));
+			mDTO.setEmail(rs.getString("email"));
+			mDTO.setPhone(rs.getString("phone"));
+			mDTO.setAge(rs.getInt("age"));
+			mDTO.setJob(rs.getString("job"));
+		}
+		DBconnector.disConnect(rs, st, con);
+		
+		return mDTO;
 	}
 	//=================================================================================
 	
