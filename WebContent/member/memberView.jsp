@@ -50,17 +50,6 @@
   <a class="btn btn-default" href="./memberUpdateForm.jsp">Update</a>
   <a class="btn btn-danger" id="del" href="./memberDelete.jsp">Delete</a>
   </div>
-  
-  
-<script type="text/javascript">
-window.onload=function(){
-var del=document.getElementById("del");
-del.addEventListener("click", function() {
-	alert(<%=s%>)
-	location.href="../index.jsp";
-});
-}
-</script>
 
 
 

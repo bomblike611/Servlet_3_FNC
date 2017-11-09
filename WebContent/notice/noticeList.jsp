@@ -150,7 +150,11 @@
 <input type="text" name="search"><input type="submit" value="검색">
 </form>
 
+<%
+if(memberDTO !=null &&memberDTO.getJob().equals("T")){ %>
 	<a href="./noticeWriteForm.jsp" class="btn btn-info" id="write">글쓰기</a>
+	<%}%>
+	
 </article>
 </section>
 <%@ include file="../temp/footer.jsp" %>

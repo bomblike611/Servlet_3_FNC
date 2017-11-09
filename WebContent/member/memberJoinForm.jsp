@@ -21,6 +21,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="../css/header.css" rel="stylesheet">
+<link href="../css/footer.css" rel="stylesheet">
 <style type="text/css">
 h1 {
 	width: 30%;

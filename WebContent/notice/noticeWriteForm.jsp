@@ -45,8 +45,8 @@ window.onload=function(){
 					<td><input type="text" name="title" class="n"></td>
 				</tr>
 				<tr>
-				<td>작성자</td>
-					<td><input type="text" name="writer" class="n"></td>
+				<td>작성자 : <%=memberDTO.getId() %></td>
+					<td><input type="text" readonly="readonly" name="writer" value="<%=memberDTO.getId()%>" class="n"></td>
 				</tr>
 				<tr>
 				<td>내용</td>

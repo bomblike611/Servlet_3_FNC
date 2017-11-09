@@ -10,6 +10,7 @@ import com.iu.db.DBconnector;
 import sun.security.pkcs11.Secmod.DbMode;
 
 public class MemberDAO {
+	//===============================================================================================
 	public boolean idCheck(String id) throws Exception{
 		boolean check=true;
 		
@@ -25,7 +26,7 @@ public class MemberDAO {
 		DBconnector.disConnect(rs, st, con);
 		return check;
 	}
-	
+	//===============================================================================================
 	public int getTotalCount(String kind,String search) throws Exception{
 		Connection con=DBconnector.getConnect();
 		
@@ -39,7 +40,7 @@ public class MemberDAO {
 		DBconnector.disConnect(rs, st, con);
 		return result;
 	}
-	
+	//=================================================================================================
 	public int insert(MemberDTO memberDTO) throws Exception{
 		Connection con=DBconnector.getConnect();
 		
@@ -60,7 +61,7 @@ public class MemberDAO {
 		
 		return result;
 	}
-	
+	//===================================================================================================
 	//selectlist
 	public ArrayList<MemberDTO> selectList(int startRow, int lastRow,String kind, String search) throws Exception{
 		Connection con=DBconnector.getConnect();
@@ -89,7 +90,7 @@ public class MemberDAO {
 		return ar;
 		
 	}
-	
+	//===============================================================================================
 	public MemberDTO selectOne(MemberDTO memberDTO) throws Exception{
 		Connection con=DBconnector.getConnect();
 		
@@ -116,7 +117,7 @@ public class MemberDAO {
 		
 		return mDTO;
 	}
-	//=================================================================================
+	//=====================================================================================================
 	public int delete(String id) throws Exception{
 		Connection con=DBconnector.getConnect();
 		
@@ -129,5 +130,27 @@ public class MemberDAO {
 		
 		return result;
 	}
+	//=====================================================================================================
+	
+	public int update(MemberDTO memberDTO) throws Exception{
+		Connection con=DBconnector.getConnect();
+		
+		String sql="update member set pw=?, name=?, age=?, email=?, phone=? where id=?";
+		PreparedStatement st=con.prepareStatement(sql);
+		st.setString(1, memberDTO.getPw());
+		st.setString(2, memberDTO.getName());
+		st.setInt(3, memberDTO.getAge());
+		st.setString(4, memberDTO.getEmail());
+		st.setString(5, memberDTO.getPhone());
+		st.setString(6, memberDTO.getId());
+		
+		int result=st.executeUpdate();
+		
+		DBconnector.disConnect(st, con);
+		
+		return result;
+	}
+	
+	
 	
 }

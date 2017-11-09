@@ -104,8 +104,11 @@ border-bottom: 6px #FAF6DC solid;
 				<tr>
 				<td colspan="4">
 				<a href="./noticeList.jsp" class="btn btn-info">List</a>
+				<%
+				if(memberDTO!=null&&memberDTO.getId().equals(noticeDTO.getWriter())){ %>
 				<a href="./noticeUpdateForm.jsp?num=<%=noticeDTO.getNum() %>" class="btn btn-info">수정</a>
 				<a href="./noticeDelete.jsp?num=<%=noticeDTO.getNum() %>" class="btn btn-info">삭제</a>
+				<%} %>
 				</td>
 				</tr>
 			</table>
