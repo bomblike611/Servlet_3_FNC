@@ -42,11 +42,11 @@ public class QnaDAO {
 		return result;
 	}
 	//delete=====================================================
-	public int delete(QnaDTO qnaDTO) throws Exception{
+	public int delete(int num) throws Exception{
 		Connection con=DBconnector.getConnect();
 		String sql="delete qna where num=?";
 		PreparedStatement st=con.prepareStatement(sql);
-		st.setInt(1, qnaDTO.getNum());
+		st.setInt(1, num);
 		int result=st.executeUpdate();
 		DBconnector.disConnect(st, con);
 		

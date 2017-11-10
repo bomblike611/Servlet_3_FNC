@@ -111,7 +111,11 @@
 						%>
 						<tr>
 							<td><%=ar.get(i).getNum()%></td>
+							<%if(memberDTO!=null){ %>
 							<td><a href="./qnaView.jsp?num=<%=ar.get(i).getNum()%>"><%=ar.get(i).getTitle()%></a></td>
+							<%}else{ %>
+							<td><%=ar.get(i).getTitle()%></td>
+							<%} %>
 							<td><%=ar.get(i).getContents()%></td>
 							<td><%=ar.get(i).getWriter()%></td>
 							<td><%=ar.get(i).getHit()%></td>

@@ -14,8 +14,17 @@
 int num=Integer.parseInt(request.getParameter("num"));
 
 QnaDAO qnaDAO=new QnaDAO();
-qnaDAO.delete(qnaDTO);
+int result=qnaDAO.delete(num);
 
+String s="Delete Fail";
+if(result>0){
+	s="Delete Success";
+}
+request.setAttribute("message", s);
+request.setAttribute("path", request.getContextPath()+"/qna/qnaList.jsp");
+
+RequestDispatcher view=request.getRequestDispatcher("../common/result.jsp");
+view.forward(request, response);
 %>
 </body>
 </html>

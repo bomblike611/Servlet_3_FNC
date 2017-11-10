@@ -115,7 +115,11 @@
 	%>
 	<tr>
 	<td><%=ar.get(i).getNum() %></td>
+	<%if(memberDTO!=null){ %>
 	<td class="contents"><a href="./noticeView.jsp?num=<%=ar.get(i).getNum()%>"><%=ar.get(i).getTitle() %></a></td>
+	<%}else{ %>
+	<td class="contents"><%=ar.get(i).getTitle() %></td>
+	<%} %>
 	<td><%=ar.get(i).getWriter() %></td>
 	<td><%=ar.get(i).getReg_date() %></td>
 	<td><%=ar.get(i).getHit() %></td>

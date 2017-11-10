@@ -59,8 +59,10 @@ qnaDTO=qnaDAO.selectOne(num);
 						
 					</tbody>
 				</table>
+				<%if(memberDTO!=null&&memberDTO.getId().equals(qnaDTO.getWriter())){ %>
 				<a href="./qnaDelete.jsp?num=<%=qnaDTO.getNum() %>" class="btn btn-danger">Delete</a>
-				<a href="./qnaUpdateForm.jsp" class="btn btn-default">Update</a>
+				<a href="./qnaUpdateForm.jsp?num=<%=qnaDTO.getNum() %>" class="btn btn-default">Update</a>
+				<%} %>
 				<a href="./qnaList.jsp" class="btn btn-default">List</a>
 				<a></a>
 				<a></a>
