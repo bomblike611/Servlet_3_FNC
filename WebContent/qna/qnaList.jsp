@@ -112,9 +112,9 @@
 						<tr>
 							<td><%=ar.get(i).getNum()%></td>
 							<%if(memberDTO!=null){ %>
-							<td><a href="./qnaView.jsp?num=<%=ar.get(i).getNum()%>"><%=ar.get(i).getTitle()%></a></td>
+							<td><a href="./qnaView.jsp?num=<%=ar.get(i).getNum()%>"><%for(int j=0;j<ar.get(i).getDepth();j++){%>-- <%}%><%=ar.get(i).getTitle()%></a></td>
 							<%}else{ %>
-							<td><%=ar.get(i).getTitle()%></td>
+							<td><%for(int j=0;j<ar.get(i).getDepth();j++){%>-- <%}%><%=ar.get(i).getTitle()%></td>
 							<%} %>
 							<td><%=ar.get(i).getContents()%></td>
 							<td><%=ar.get(i).getWriter()%></td>

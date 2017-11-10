@@ -5,7 +5,7 @@
     <%
     request.setCharacterEncoding("UTF-8");
     response.setCharacterEncoding("UTF-8");
-    
+    //서브쿼리 대신 QnaDTO parent=qnaDAO.selectOne(qnaDTO.getNum());로 셋팅해줘도댐
     QnaDTO qnaDTO=new QnaDTO();
     qnaDTO.setNum(Integer.parseInt(request.getParameter("fnum")));
     qnaDTO.setTitle(request.getParameter("title"));
