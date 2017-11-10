@@ -30,19 +30,19 @@ response.setCharacterEncoding("UTF-8");
     <div class="form-group">
       <label class="control-label col-sm-2" for="title">Title</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
+        <input type="text" class="form-control n" id="title" placeholder="Enter title" name="title">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label col-sm-2" for="writer">Writer</label>
       <div class="col-sm-10">
-        <input type="text" readonly="readonly" class="form-control" id="writer" placeholder="Enter writer" name="writer" value="<%=memberDTO.getId()%>">
+        <input type="text" readonly="readonly" class="form-control n" id="writer" placeholder="Enter writer" name="writer" value="<%=memberDTO.getId()%>">
       </div>
     </div>
      <div class="form-group">
       <label class="control-label col-sm-2" for="contents">Contents</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="contents" placeholder="Enter contents" name="contents">
+        <input type="text" class="form-control n" id="contents" placeholder="Enter contents" name="contents">
       </div>
     </div>
     <div class="form-group">        
