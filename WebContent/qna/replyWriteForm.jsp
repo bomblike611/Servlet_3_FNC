@@ -1,15 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+    
+    int fnum=Integer.parseInt(request.getParameter("num"));
+    
+    
+    %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<% 
-request.setCharacterEncoding("UTF-8");
-response.setCharacterEncoding("UTF-8");
-%>
-
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -44,7 +47,8 @@ window.onload=function(){
 <section id="main">
 <div class="container">
   <h2>Write</h2>
-  <form class="form-horizontal" action="./qnaWriteProcess.jsp" name="frm">
+  <form class="form-horizontal" action="./replyWriteProcess.jsp" name="frm">
+  <input type="hidden" name="fnum" value="<%=fnum%>">
     <div class="form-group">
       <label class="control-label col-sm-2" for="title">Title</label>
       <div class="col-sm-10">
@@ -72,5 +76,7 @@ window.onload=function(){
 </div>
 </section>
 <%@include file="../temp/footer.jsp" %>
+
+
 </body>
 </html>

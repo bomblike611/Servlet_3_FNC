@@ -63,6 +63,9 @@ qnaDTO=qnaDAO.selectOne(num);
 				<a href="./qnaDelete.jsp?num=<%=qnaDTO.getNum() %>" class="btn btn-danger">Delete</a>
 				<a href="./qnaUpdateForm.jsp?num=<%=qnaDTO.getNum() %>" class="btn btn-default">Update</a>
 				<%} %>
+				<%if(memberDTO!=null){ %>
+				<a href="./replyWriteForm.jsp?num=<%=qnaDTO.getNum() %>" class="btn btn-default">Answer</a>
+				<%} %>
 				<a href="./qnaList.jsp" class="btn btn-default">List</a>
 				<a></a>
 				<a></a>
