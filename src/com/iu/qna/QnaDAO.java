@@ -54,11 +54,11 @@ public class QnaDAO {
 		
 	}
 	//selectOne====================================================
-	public QnaDTO selectOne(QnaDTO qnaDTO) throws Exception{
+	public QnaDTO selectOne(int num) throws Exception{
 		Connection con=DBconnector.getConnect();
 		String sql="select * from qna where num=?";
 		PreparedStatement st=con.prepareStatement(sql);
-		st.setInt(1, qnaDTO.getNum());
+		st.setInt(1, num);
 		ResultSet rs=st.executeQuery();
 		
 		QnaDTO qnaDTO2=null;

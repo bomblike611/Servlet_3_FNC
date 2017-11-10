@@ -18,8 +18,41 @@ response.setCharacterEncoding("UTF-8");
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="../css/header.css" rel="stylesheet">
+<link href="../css/footer.css" rel="stylesheet">
 </head>
 <body>
-
+<%@include file="../temp/header.jsp" %>
+<section id="main">
+<div class="container">
+  <h2>Write</h2>
+  <form class="form-horizontal" action="./qnaWriteProcess.jsp">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="title">Title</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="writer">Writer</label>
+      <div class="col-sm-10">
+        <input type="text" readonly="readonly" class="form-control" id="writer" placeholder="Enter writer" name="writer" value="<%=memberDTO.getId()%>">
+      </div>
+    </div>
+     <div class="form-group">
+      <label class="control-label col-sm-2" for="contents">Contents</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="contents" placeholder="Enter contents" name="contents">
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+</section>
+<%@include file="../temp/footer.jsp" %>
 </body>
 </html>

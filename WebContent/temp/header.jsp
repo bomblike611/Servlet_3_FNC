@@ -13,7 +13,7 @@
 			<ul>
 				<li><a
 					href="<%=request.getContextPath()%>/notice/noticeList.jsp">COMPANY</a></li>
-				<li><a href="#">ARTISTS</a></li>
+				<li><a href="<%=request.getContextPath()%>/qna/qnaList.jsp">ARTISTS</a></li>
 				<li><a href="#">PR CENTER</a></li>
 				<li><a href="#">AUDITION</a></li>
 			</ul>
