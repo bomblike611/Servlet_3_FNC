@@ -59,6 +59,11 @@ qnaDTO=qnaDAO.selectOne(num);
 						
 					</tbody>
 				</table>
+				<a href="./qnaDelete.jsp?num=<%=qnaDTO.getNum() %>" class="btn btn-danger">Delete</a>
+				<a href="./qnaUpdateForm.jsp" class="btn btn-default">Update</a>
+				<a href="./qnaList.jsp" class="btn btn-default">List</a>
+				<a></a>
+				<a></a>
 			</div>
 </section>
 <%@include file="../temp/footer.jsp" %>

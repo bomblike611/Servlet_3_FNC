@@ -17,7 +17,7 @@ if(result>0){
 }
 %>
 <!DOCTYPE html>
-<html>1
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
