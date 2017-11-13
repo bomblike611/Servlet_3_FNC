@@ -1,3 +1,6 @@
+<%@page import="com.choa.files.FileDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.choa.files.FileDAO"%>
 <%@page import="com.iu.notice.NoticeDTO"%>
 <%@page import="com.iu.notice.NoticeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,7 +13,11 @@
 	int num=Integer.parseInt(request.getParameter("num"));
 	NoticeDAO noticeDAO=new NoticeDAO();
 	int result=noticeDAO.hitUpdate(num);
-	NoticeDTO noticeDTO=noticeDAO.selectOne(num);%>
+	NoticeDTO noticeDTO=noticeDAO.selectOne(num);
+	FileDAO fileDAO=new FileDAO();
+	ArrayList<FileDTO> ar=fileDAO.selectList(num);
+	
+	%>
 
 <!DOCTYPE html>
 <html>
@@ -111,8 +118,14 @@ border-bottom: 6px #FAF6DC solid;
 				<%} %>
 				</td>
 				</tr>
+			<tr>
+			<%for(int i=0;i<ar.size();i++){ %>
+			<td colspan="4">
+			<a href="../upload/<%=ar.get(i).getFname()%>"><%=ar.get(i).getOname() %>^___^</a>
+			</td>
+			<%} %>
+			</tr>
 			</table>
-			<a href="../images/main/main.jpg">d</a>
 		</article>
 	</section>
 	<%@ include file="../temp/footer.jsp" %>

@@ -7,16 +7,19 @@ import java.util.ArrayList;
 
 import com.iu.db.DBconnector;
 
+import sun.security.pkcs11.Secmod.DbMode;
 
 public class QnaDAO {
 //insert=======================================================
 	public int insert(QnaDTO qnaDTO) throws Exception{
 		Connection con=DBconnector.getConnect();
-		String sql="insert into qna values (QNA_SEQ.NEXTVAL,?,?,?,0,sysdate,QNA_SEQ.CURRVAL,0,0)";
+		String sql="insert into qna values (?,?,?,?,0,sysdate,?,0,0)";
 		PreparedStatement st=con.prepareStatement(sql);
-		st.setString(1, qnaDTO.getTitle());
-		st.setString(2, qnaDTO.getContents());
-		st.setString(3, qnaDTO.getWriter());
+		st.setInt(1, qnaDTO.getNum());
+		st.setString(2, qnaDTO.getTitle());
+		st.setString(3, qnaDTO.getContents());
+		st.setString(4, qnaDTO.getWriter());
+		st.setInt(5, qnaDTO.getNum());
 		
 		int result=st.executeUpdate();
 		DBconnector.disConnect(st, con);
@@ -151,4 +154,14 @@ public class QnaDAO {
 		
 		return result2;
 	}
+	//getNum===========================================================================
+		public int getNum() throws Exception{
+			Connection con=DBconnector.getConnect();
+			String sql="select qna_seq.nextval from qna";
+			PreparedStatement st=con.prepareStatement(sql);
+			int result=st.executeUpdate();
+			DBconnector.disConnect(st, con);
+			return result;
+		}
+
 }

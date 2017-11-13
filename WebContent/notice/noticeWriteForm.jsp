@@ -18,8 +18,6 @@ window.onload=function(){
 	CKEDITOR.replace('contents');
 	var btn = document.getElementById("btn");
 	btn.addEventListener("click", function(){
-		//Form 특화
-		//document.폼의name.iuput의name
 		var n = document.getElementsByClassName("n");
 		var check=true;
 		for(var i=0;i<n.length;i++){
@@ -52,14 +50,14 @@ window.onload=function(){
 				</tr>
 				<tr>
 				<td>내용</td>
-					<td><textarea name="contents" id="contents" class="n"></textarea></td>
+					<td><textarea name="contents" id="contents"></textarea></td>
 				</tr>
 				<tr>
 				<td>내용</td>
 					<td><input type="file" name="f1"></td>
 				</tr>
 				<tr>
-				<td colspan="2"><input type="button" id="btn" value="글쓰기"></td>
+				<td colspan="2"><input type="submit" id="btn" value="글쓰기"></td>
 				</tr>
 			</table>
 			</form>

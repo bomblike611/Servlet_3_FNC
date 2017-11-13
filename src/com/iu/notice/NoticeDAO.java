@@ -8,7 +8,20 @@ import java.util.ArrayList;
 import com.iu.db.DBconnector;
 
 public class NoticeDAO {
+	//getNum
 	
+	public int getNum() throws Exception{
+		Connection con=DBconnector.getConnect();
+		
+		String sql="select BOARD_SEQ.nextval from dual";
+		PreparedStatement st=con.prepareStatement(sql);
+		ResultSet rs=st.executeQuery();
+		rs.next();
+		int result=rs.getInt(1);
+		DBconnector.disConnect(rs, st, con);
+		
+		return result;
+	}
 
 	
 	
@@ -50,12 +63,13 @@ public class NoticeDAO {
 	public int insert(NoticeDTO noticeDTO) throws Exception{
 		Connection con=DBconnector.getConnect();
 		
-		String sql="insert into notice values (BOARD_SEQ.NEXTVAL,?,?,?,sysdate,0)";
+		String sql="insert into notice values (?,?,?,?,sysdate,0)";
 		PreparedStatement st=con.prepareStatement(sql);
 		
-		st.setString(1, noticeDTO.getTitle());
-		st.setString(2, noticeDTO.getWriter());
-		st.setString(3, noticeDTO.getContents());
+		st.setInt(1, noticeDTO.getNum());
+		st.setString(2, noticeDTO.getTitle());
+		st.setString(3, noticeDTO.getWriter());
+		st.setString(4, noticeDTO.getContents());
 		
 		int result=st.executeUpdate();
 		DBconnector.disConnect(st, con);

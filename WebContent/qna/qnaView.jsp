@@ -1,3 +1,6 @@
+<%@page import="com.choa.files.FileDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.choa.files.FileDAO"%>
 <%@page import="com.iu.qna.QnaDTO"%>
 <%@page import="com.iu.qna.QnaDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -16,6 +19,10 @@ int num=Integer.parseInt(request.getParameter("num"));
 QnaDTO qnaDTO=new QnaDTO();
 QnaDAO qnaDAO=new QnaDAO();
 qnaDTO=qnaDAO.selectOne(num);
+
+FileDAO fileDAO=new FileDAO();
+ArrayList<FileDTO> ar=fileDAO.selectList(num);
+
 %>
 
 <!-- Latest compiled and minified CSS -->
@@ -56,7 +63,13 @@ qnaDTO=qnaDAO.selectOne(num);
 							<td><%=qnaDTO.getHit() %></td>
 							<td><%=qnaDTO.getReg_date() %></td>
 						</tr>
-						
+						<%for(int i=0;i<ar.size();i++){ %>
+						<tr>
+						<td>
+						<a href="../upload/<%=ar.get(i).getFname()%>"><%=ar.get(i).getOname() %></a>
+						</td>
+						</tr>
+						<%} %>
 					</tbody>
 				</table>
 				<%if(memberDTO!=null&&memberDTO.getId().equals(qnaDTO.getWriter())){ %>
@@ -67,8 +80,7 @@ qnaDTO=qnaDAO.selectOne(num);
 				<a href="./replyWriteForm.jsp?num=<%=qnaDTO.getNum() %>" class="btn btn-default">Answer</a>
 				<%} %>
 				<a href="./qnaList.jsp" class="btn btn-default">List</a>
-				<a></a>
-				<a></a>
+				
 			</div>
 </section>
 <%@include file="../temp/footer.jsp" %>

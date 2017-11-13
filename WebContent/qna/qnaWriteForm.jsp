@@ -20,31 +20,18 @@ response.setCharacterEncoding("UTF-8");
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="../css/header.css" rel="stylesheet">
 <link href="../css/footer.css" rel="stylesheet">
+<script src="https://cdn.ckeditor.com/4.7.3/full/ckeditor.js"></script>	
 </head>
 <script type="text/javascript">
 window.onload=function(){
-	var btn = document.getElementById("btn");
-	btn.addEventListener("click", function(){
-		var n = document.getElementsByClassName("n");
-		var check=true;
-		for(var i=0;i<n.length;i++){
-			if(n[i].value==""){
-				alert("입력되지 않은 항목이 있습니다.");
-				check=false;
-				break;
-			}
-		}
-		if(check){
-			document.frm.submit();
-		}
-	});
+	CKEDITOR.replace('contents');
 }</script>
 <body>
 <%@include file="../temp/header.jsp" %>
 <section id="main">
 <div class="container">
   <h2>Write</h2>
-  <form class="form-horizontal" action="./qnaWriteProcess.jsp" name="frm">
+  <form class="form-horizontal" action="./qnaWriteProcess.jsp" name="frm" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label class="control-label col-sm-2" for="title">Title</label>
       <div class="col-sm-10">
@@ -60,12 +47,24 @@ window.onload=function(){
      <div class="form-group">
       <label class="control-label col-sm-2" for="contents">Contents</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control n" id="contents" placeholder="Enter contents" name="contents">
+        <textarea class="form-control" id="contents" placeholder="Enter contents" name="contents"></textarea>
+      </div>
+    </div>
+     <div class="form-group">
+      <label class="control-label col-sm-2" for="contents">File</label>
+      <div class="col-sm-10">
+        <input type="file" name="f1" class="form-control">
+      </div>
+    </div>
+     <div class="form-group">
+      <label class="control-label col-sm-2" for="contents">File</label>
+      <div class="col-sm-10">
+        <input type="file" name="f2" class="form-control">
       </div>
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <input type="button" id="btn" name="btn" class="btn btn-success" value="write">
+        <input type="submit" id="btn" name="btn" class="btn btn-success" value="write">
       </div>
     </div>
   </form>
