@@ -10,6 +10,8 @@
    	noticeDTO.setTitle(request.getParameter("title"));
    	noticeDTO.setContents(request.getParameter("contents"));
    	noticeDTO.setWriter(request.getParameter("writer"));
+   	String name=request.getParameter("f1");
+   	
     %>
     
     <%

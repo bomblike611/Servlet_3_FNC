@@ -112,7 +112,7 @@ border-bottom: 6px #FAF6DC solid;
 				</td>
 				</tr>
 			</table>
-
+			<a href="../images/main/main.jpg">d</a>
 		</article>
 	</section>
 	<%@ include file="../temp/footer.jsp" %>

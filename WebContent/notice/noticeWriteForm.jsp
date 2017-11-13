@@ -12,8 +12,10 @@
 <link href="../css/header.css" rel="stylesheet">
 <link href="../css/footer.css" rel="stylesheet">
 <link href="../css/write.css" rel="stylesheet">
+<script src="https://cdn.ckeditor.com/4.7.3/full/ckeditor.js"></script>	
 <script type="text/javascript">
 window.onload=function(){
+	CKEDITOR.replace('contents');
 	var btn = document.getElementById("btn");
 	btn.addEventListener("click", function(){
 		//Form 특화
@@ -38,7 +40,7 @@ window.onload=function(){
 	<section id="main">
 	<h1>글쓰기</h1>
 		<article id="write">
-		<form action="noticeWriteProcess.jsp" name="frm">
+		<form action="noticeWriteProcess.jsp" name="frm" method="post" enctype="multipart/form-data">
 			<table>
 				<tr>
 					<td>제목</td>
@@ -51,6 +53,10 @@ window.onload=function(){
 				<tr>
 				<td>내용</td>
 					<td><textarea name="contents" id="contents" class="n"></textarea></td>
+				</tr>
+				<tr>
+				<td>내용</td>
+					<td><input type="file" name="f1"></td>
 				</tr>
 				<tr>
 				<td colspan="2"><input type="button" id="btn" value="글쓰기"></td>
