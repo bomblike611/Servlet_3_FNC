@@ -25,6 +25,7 @@ for(FileDTO f: ar){
 	File file=new File(save,f.getFname());
 	file.delete();
 }
+fileDAO.delete(num);
 int result=qnaDAO.delete(num);
 
 
